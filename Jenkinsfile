@@ -12,7 +12,7 @@ pipeline {
     stages {
         stage('Checkout Code') {
             steps {
-                git branch: 'main', url: 'https://github.com/Hari7913/onlinebookstore.git'
+                git branch: 'master', url: 'https://github.com/Hari7913/onlinebookstore.git'
             }
         }
 
