@@ -6,7 +6,7 @@ pipeline {
         IMAGE_NAME      = "java-onlinebookstore" // ✅ project image name
         IMAGE_TAG       = "latest"
         CONTAINER_NAME  = "HOTSTAR-CONTAINER"
-        DOCKER_CREDS = "dockerhub-cred"
+        DOCKER_CREDS = "dockerhub-creds"
     }
 
     stages {
