@@ -25,13 +25,7 @@ pipeline {
     }
 }
 
- stage('JENKINS TO NEXUS') {
-        steps {
-          withMaven(jdk: 'jdk17', maven: 'maven3', traceability: true) {
-             sh 'mvn clean package -DskipTests'
-}
-        }
-    }
+
 
 
         stage('Build Docker Image') {
@@ -65,16 +59,6 @@ pipeline {
             }
         }
 
-       stage('Deploy to Kubernetes') {
-    steps {
-        sh '''
-        rm -rf ~/.kube/config
-        aws eks --region ap-south-1 update-kubeconfig --name satyacluster
-        kubectl get nodes
-        kubectl apply -f Deployment.yml
-        kubectl apply -f Service.yml
-        '''
-    }
-}
+      
     }
 }
